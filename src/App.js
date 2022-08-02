@@ -50,6 +50,9 @@ function App() {
     setTodos(prevToDos => prevToDos.filter(todoItem => !todoItem.isCompleted))
   }
 
+  const selectedTodos = todos.includes(todos.find(todo => todo.isCompleted))
+
+
   // function handleTodoUpdate(e, id) {
   //   setTodos(prevTodos => prevTodos.map(todoItem => {
   //     return todoItem.id === id ? 

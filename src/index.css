@@ -1,13 +1,152 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;400;500;600;800;900&display=swap');
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  margin: 0;
+  font-family: Raleway, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: linear-gradient(to right, tomato, #FCD757);
 }
+
+.App {
+  display: flex;
+  flex-direction: column;
+}
+
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 7rem;
+  background: tomato;
+}
+
+.header-title {
+  font-weight: 500;
+  font-size: 3rem;
+  color: white;
+}
+
+main {
+  padding-block: 4rem;
+  padding-inline: 4rem;
+  margin-inline: 10%;
+  width: 700px;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  align-items: center;
+  align-self: center;
+}
+
+input {
+  height: 3.5rem;
+  font-family: Raleway, sans-serif;
+  font-size: 1.25rem;
+  padding-inline: 2rem;
+  align-self: stretch;
+  border: 2px solid tomato;
+  border-radius: 1rem;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 10px;
+}
+
+.add-btn,
+.delete-selected {
+  width: 12rem;
+  font-family: "Raleway", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: white;
+  padding: 1rem;
+  border: none;
+  border-radius: .5rem;
+  background-color: tomato;
+  cursor: pointer;
+
+}
+
+.todo-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.todo {
+  width: 12rem;
+  height: 12rem;
+  border-radius: 1rem;
+  font-size: 1.1rem;
+  color: black;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  padding: .5rem;
+  overflow-wrap: break-word;
+  background-image: linear-gradient(to right, #48E5C2, #DAF7DC);
+  /* background-image: linear-gradient(to right, tomato, #FCD757); */
+
+}
+
+.modify-todo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+
+.completed,
+.delete-todo {
+  font-size: 1rem;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.completed {
+  width: 1.4rem;
+  height: 1.4rem;
+  border: 1px solid grey;
+  border-radius: 50%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.delete-todo {
+  font-size: 1.5rem;
+}
+
+.tooltiptext {
+  visibility: hidden;
+  position: absolute;
+  font-size: 1rem;
+  font-weight: 400;
+  right: 105%;
+  width: 7rem;
+  background-color: white;
+  color: black;
+  padding: .5rem;
+  border-radius: 1rem;
+}
+
+.delete-todo:hover .tooltiptext,
+.completed:hover .tooltiptext {
+  visibility: visible;
+}
+
+

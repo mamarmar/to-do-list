@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;400;500;600;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800;900&family=Raleway:wght@100;300;400;500;600;800;900&display=swap');
 
 * {
   margin: 0;
@@ -7,87 +7,133 @@
 
 body {
   margin: 0;
-  font-family: Raleway, sans-serif;
+  font-family: Mulish, Raleway, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: linear-gradient(to right, #9D79BC, #A14DA0);
+  background-image: linear-gradient(to right, tomato, hotpink);
   
 }
 
 .App {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  height: 75vh;
+  /* border: 1px solid black; */
+  margin: 5rem;
 }
 
-
-header {
+.header-input-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 7rem;
-  box-shadow: 0px 0px 8px 2px #000000;
+  flex-direction: column;
+  justify-content: space-between; 
+}
+
+ header {
+  width: 15rem;
 }
 
 .header-title {
-  font-weight: 500;
-  font-size: 3rem;
+  font-weight: 600;
+  font-size: 500%;
   color: white;
+  line-height: 4rem;
 }
 
-main {
-  padding-block: 4rem;
-  padding-inline: 4rem;
-  margin-inline: 10%;
-  width: 700px;
+.input-container {
+  margin-top: -40%;
   display: flex;
-  flex-direction: column;
-  gap: 3rem;
-  align-items: center;
-  align-self: center;
+  gap: 1rem;
 }
 
 input {
   height: 4rem;
-  font-family: Raleway, sans-serif;
+  font-family: Mulish, Raleway, sans-serif;
   font-size: 1.25rem;
   padding-inline: 2rem;
   align-self: stretch;
-  border-radius: 1rem;
+  border-radius: 50px;
   border: none;
 }
 
-.button-container {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  gap: 10px;
-}
-
 button {
-  width: 12rem;
-  font-family: "Raleway", sans-serif;
+  font-family: Mulish, "Raleway", sans-serif;
   font-size: 1.3rem;
   font-weight: 600;
   color: black;
   padding: 1rem;
-  border: none;
-  border-radius: .5rem;
-  background-color: #FFC914;
 }
 
 button:hover {
   cursor: pointer;
 }
 
+.add-btn {
+  border-radius: 50%;
+  border: 2px solid black;
+  font-size: 1.5rem;
+  width: 4rem;
+  background-color: #e9f253;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-self: flex-start;
+  margin-bottom: 15px;
+  font-size: 12px;
+  color:white;
+  
+}
+
+footer a, footer a:hover, footer a:focus, footer a:active {
+  text-decoration: none;
+  color: white;
+}
+
+.heart-icon {
+  width: 12px;
+  filter: invert(100%) sepia(21%) saturate(5831%) hue-rotate(8deg) brightness(109%) contrast(89%);
+}
+
+
+.output-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.delete-selected {
+  position: absolute;
+  right:0;
+  color: white;
+  border-radius: 50%;
+  border: 2px solid black;
+  font-size: 1.5rem;
+  width: 3.2rem;
+  height: 3.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bin-icon {
+  width: 1rem;
+  filter: invert(0%) sepia(100%) saturate(6313%) hue-rotate(140deg) brightness(99%) contrast(107%);
+}
+
 .todo-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 25px;
+  position: absolute;
+  top: 12%;
 }
 
 .todo {
   width: 12rem;
-  height: 12rem;
+  height: 7rem;
   border-radius: 1rem;
   font-size: 1.1rem;
   color: black;
@@ -97,7 +143,9 @@ button:hover {
   gap: .5rem;
   padding: .5rem;
   overflow-wrap: break-word;
-  background-color: #91C4F2;
+  overflow-y: scroll;
+  background-color: white;
+  /* box-shadow: 0px 0px 8px 2px #000000; */
 
 }
 
@@ -137,14 +185,23 @@ button:hover {
   position: absolute;
   font-size: 1rem;
   font-weight: 400;
-  right: 105%;
   width: 7rem;
-  background-color: white;
+  background-color: #e9f253;
   color: black;
   padding: .5rem;
   border-radius: 1rem;
 }
 
+.completed .tooltiptext {
+  left: 105%;
+  top: 10%;
+}
+
+.delete-todo .tooltiptext {
+  right: 105%;
+}
+
+.add-btn:hover .tooltiptext,
 .delete-todo:hover .tooltiptext,
 .completed:hover .tooltiptext {
   visibility: visible;

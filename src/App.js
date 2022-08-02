@@ -2,6 +2,7 @@ import React from "react";
 import { nanoid } from "nanoid";
 import Header from "./components/Header";
 import Input from "./components/Input";
+import Footer from "./components/Footer";
 import Todo from "./components/Todo";
 
 function App() {
@@ -21,7 +22,7 @@ function App() {
       id: nanoid(),
       body: input,
       isEditable: false,
-      isCompleted: false
+      isCompleted: false,
     };
     setTodos((prevTodos) => {
       return [...prevTodos, newTodo];
@@ -34,37 +35,42 @@ function App() {
   }
 
   function deleteTodo(event, todoId) {
-    event.stopPropagation()
-    setTodos((prevToDos) => prevToDos.filter((todoItem) => todoItem.id !== todoId));
+    event.stopPropagation();
+    setTodos((prevToDos) =>
+      prevToDos.filter((todoItem) => todoItem.id !== todoId)
+    );
   }
 
   function toggleCompleted(id) {
-    setTodos(prevTodos => prevTodos.map(todoItem => {
-      return todoItem.id === id ? 
-      {...todoItem, isCompleted: !todoItem.isCompleted} : 
-      todoItem
-    }))
+    setTodos((prevTodos) =>
+      prevTodos.map((todoItem) => {
+        return todoItem.id === id
+          ? { ...todoItem, isCompleted: !todoItem.isCompleted }
+          : todoItem;
+      })
+    );
   }
 
   function deleteSelected() {
-    setTodos(prevToDos => prevToDos.filter(todoItem => !todoItem.isCompleted))
+    setTodos((prevToDos) =>
+      prevToDos.filter((todoItem) => !todoItem.isCompleted)
+    );
   }
 
-  const selectedTodos = todos.includes(todos.find(todo => todo.isCompleted))
-
+  const selectedTodos = todos.includes(todos.find((todo) => todo.isCompleted));
 
   // function handleTodoUpdate(e, id) {
   //   setTodos(prevTodos => prevTodos.map(todoItem => {
-  //     return todoItem.id === id ? 
-  //     {...todoItem, body: e.target.value} : 
+  //     return todoItem.id === id ?
+  //     {...todoItem, body: e.target.value} :
   //     todoItem
   //   }))
   // }
 
   // function updateTodo(id) {
   //   setTodos(prevTodos => prevTodos.map(todoItem => {
-  //     return todoItem.id === id ? 
-  //     {...todoItem, isEditable: !todoItem.isEditable} : 
+  //     return todoItem.id === id ?
+  //     {...todoItem, isEditable: !todoItem.isEditable} :
   //     todoItem
   //   }))
   // }
@@ -86,27 +92,32 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
-      <main>
-        <Input input={input} handleChange={handleInputChange} />
-        <div className="button-container">
+      <div className="header-input-container">
+        <Header />
+        <div className="input-container">
+          <Input input={input} handleChange={handleInputChange} />
           <button 
             className="add-btn" 
             onClick={input && handleClick}
+            title="Add to List"
           >
-            Add To-Do
-          </button>
-          <button 
-            className="delete-selected" 
-            onClick={deleteSelected}
-            style={{backgroundColor: selectedTodos ? "#FFC914" : "#91C4F2"}}
-          >
-            Delete Completed
+            ➜
           </button>
         </div>
+        <Footer />
         
+      </div>
+      <div className="output-container">
+        <button
+          className="delete-selected"
+          onClick={deleteSelected}
+          title="Delete Completed"
+          style={{ backgroundColor: selectedTodos ? "#e9f253" : "white" }}
+        >
+          <span> <img src="../../images/icons/trash-can-solid.svg" alt="trashcan-icon" className="bin-icon"/></span>
+        </button>
         <div className="todo-list">{todoList}</div>
-      </main>
+      </div>
     </div>
   );
 }

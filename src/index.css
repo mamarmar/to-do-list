@@ -10,7 +10,8 @@ body {
   font-family: Raleway, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: linear-gradient(to right, tomato, #FCD757);
+  background-image: linear-gradient(to right, #9D79BC, #A14DA0);
+  
 }
 
 .App {
@@ -24,7 +25,7 @@ header {
   justify-content: center;
   align-items: center;
   height: 7rem;
-  background: tomato;
+  box-shadow: 0px 0px 8px 2px #000000;
 }
 
 .header-title {
@@ -46,13 +47,13 @@ main {
 }
 
 input {
-  height: 3.5rem;
+  height: 4rem;
   font-family: Raleway, sans-serif;
   font-size: 1.25rem;
   padding-inline: 2rem;
   align-self: stretch;
-  border: 2px solid tomato;
   border-radius: 1rem;
+  border: none;
 }
 
 .button-container {
@@ -62,19 +63,20 @@ input {
   gap: 10px;
 }
 
-.add-btn,
-.delete-selected {
+button {
   width: 12rem;
   font-family: "Raleway", sans-serif;
   font-size: 1.3rem;
   font-weight: 600;
-  color: white;
+  color: black;
   padding: 1rem;
   border: none;
   border-radius: .5rem;
-  background-color: tomato;
-  cursor: pointer;
+  background-color: #FFC914;
+}
 
+button:hover {
+  cursor: pointer;
 }
 
 .todo-list {
@@ -95,8 +97,7 @@ input {
   gap: .5rem;
   padding: .5rem;
   overflow-wrap: break-word;
-  background-image: linear-gradient(to right, #48E5C2, #DAF7DC);
-  /* background-image: linear-gradient(to right, tomato, #FCD757); */
+  background-color: #91C4F2;
 
 }
 
@@ -148,5 +149,3 @@ input {
 .completed:hover .tooltiptext {
   visibility: visible;
 }
-
-

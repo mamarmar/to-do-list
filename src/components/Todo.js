@@ -1,12 +1,12 @@
 import React from "react"
 
 function Todo(props) {
+    const styles = {textDecoration: props.isCompleted ? "line-through" : ""}
     return (
         <div className="todo">
             <div className="modify-todo">
                 <div className="completed" 
                     onClick={props.toggleCompleted}
-                    // style={{backgroundColor: props.isCompleted ? "black" : "white"}}
                 >
                     <span className="tooltiptext">Mark as completed</span>
                     {props.isCompleted && "⚫"}
@@ -23,7 +23,7 @@ function Todo(props) {
                 className="todo-text"
                 // onInput={props.handleTodoUpdate} 
                 // contentEditable={true}
-                style={{textDecoration: props.isCompleted ? "line-through" : ""}}
+                style={styles}
             >
                 {props.body}
             </div>

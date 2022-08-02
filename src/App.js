@@ -96,6 +96,7 @@ function App() {
           <button 
             className="delete-selected" 
             onClick={deleteSelected}
+            style={{backgroundColor: selectedTodos ? "#FFC914" : "#91C4F2"}}
           >
             Delete Selected
           </button>

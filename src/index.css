@@ -10,7 +10,7 @@ body {
   font-family: Mulish, Raleway, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: linear-gradient(to right, tomato, hotpink);
+  background-image: linear-gradient(to right, #1e4ba2, #A14DA0);
   
 }
 
@@ -61,6 +61,7 @@ button {
   font-weight: 600;
   color: black;
   padding: 1rem;
+  background-color: #e9f253;
 }
 
 button:hover {
@@ -72,7 +73,7 @@ button:hover {
   border: 2px solid black;
   font-size: 1.5rem;
   width: 4rem;
-  background-color: #e9f253;
+  
 }
 
 footer {
@@ -116,6 +117,23 @@ footer a, footer a:hover, footer a:focus, footer a:active {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.delete-selected:hover {
+  /* background-color: hotpink; */
+  animation: expand 1s ease-in-out .2s 1 forwards;
+}
+
+@keyframes expand{
+  from {
+    width: 3.2rem;
+    border-radius: 50%;
+  }
+  to {
+    width: 8rem;
+    border-radius: 50px;
+    content: "Delete Completed Todos";
+  }
 }
 
 .bin-icon {
@@ -201,7 +219,6 @@ footer a, footer a:hover, footer a:focus, footer a:active {
   right: 105%;
 }
 
-.add-btn:hover .tooltiptext,
 .delete-todo:hover .tooltiptext,
 .completed:hover .tooltiptext {
   visibility: visible;

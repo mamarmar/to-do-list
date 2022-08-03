@@ -6,6 +6,7 @@ function Input(props) {
       placeholder="Type To-Do"
       onChange={props.handleChange}
       value={props.input}
+      onKeyPress={props.input && props.onKeyPress}
     >
     </input>
   );

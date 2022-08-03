@@ -34,6 +34,13 @@ function App() {
     clearInput();
   }
 
+  function handleKeyPress(event) {
+    if (event.key === 'Enter') {
+      createTodo()
+      clearInput()
+    }
+  }
+
   function deleteTodo(event, todoId) {
     event.stopPropagation();
     setTodos((prevToDos) =>
@@ -57,7 +64,7 @@ function App() {
     );
   }
 
-  const selectedTodos = todos.includes(todos.find((todo) => todo.isCompleted));
+  const completedTodos = todos.includes(todos.find((todo) => todo.isCompleted));
 
   // function handleTodoUpdate(e, id) {
   //   setTodos(prevTodos => prevTodos.map(todoItem => {
@@ -95,7 +102,7 @@ function App() {
       <div className="header-input-container">
         <Header />
         <div className="input-container">
-          <Input input={input} handleChange={handleInputChange} />
+          <Input input={input} handleChange={handleInputChange} onKeyPress={(event)=>handleKeyPress(event)}/>
           <button 
             className="add-btn" 
             onClick={input && handleClick}
@@ -108,14 +115,13 @@ function App() {
         
       </div>
       <div className="output-container">
-        <button
+        {completedTodos && <button
           className="delete-selected"
           onClick={deleteSelected}
           title="Delete Completed"
-          style={{ backgroundColor: selectedTodos ? "#e9f253" : "white" }}
         >
           <span> <img src="../../images/icons/trash-can-solid.svg" alt="trashcan-icon" className="bin-icon"/></span>
-        </button>
+        </button>}
         <div className="todo-list">{todoList}</div>
       </div>
     </div>

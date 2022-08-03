@@ -325,6 +325,15 @@ footer a, footer a:hover, footer a:focus, footer a:active {
     text-align: left;
   }
 
+  input {
+    height: 5rem;
+  }
+
+  .add-btn {
+    height: 5rem;
+    width: 5rem;
+  }
+
   footer {
     align-self: flex-start;
     text-align: left;

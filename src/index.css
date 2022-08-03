@@ -147,7 +147,7 @@ footer a, footer a:hover, footer a:focus, footer a:active {
   gap: .5rem;
   padding: .5rem;
   overflow-wrap: break-word;
-  overflow-y: scroll;
+  overflow-y: auto;
   background-color: white;
 }
 

@@ -352,12 +352,13 @@ footer a, footer a:hover, footer a:focus, footer a:active {
 
   input {
     width: 26rem;
-    height: 5rem;
+    height: 6rem;
     font-size: 1.4rem;
   }
 
   .add-btn {
     width: 100px;
+    height: 6rem;
     font-size: 3rem;
     font-weight: 200;
   }

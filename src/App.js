@@ -116,13 +116,20 @@ function App() {
       </div>
       <div className="output-container">
         {completedTodos && <button
-          className="delete-selected"
+          className="delete-selected-btn"
           onClick={deleteSelected}
           title="Delete Completed"
         >
-          <span> <img src="../../images/icons/trash-can-solid.svg" alt="trashcan-icon" className="bin-icon"/></span>
+          <span> 
+            <img
+              src="../../images/icons/trash-can-solid.svg"
+              alt="trashcan-icon" 
+              className="bin-icon"/>
+          </span>
         </button>}
-        <div className="todo-list">{todoList}</div>
+        <div className="todo-list">
+          {todoList}
+        </div>
       </div>
     </div>
   );

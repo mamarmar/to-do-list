@@ -100,10 +100,6 @@ footer a, footer a:hover, footer a:focus, footer a:active {
 }
 
 .delete-selected-btn {
-  
-  color: white;
-  width: 3.2rem;
-  height: 3.2rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -125,7 +121,6 @@ footer a, footer a:hover, footer a:focus, footer a:active {
 }
 
 .bin-icon {
-  width: 1rem;
   filter: invert(0%) sepia(100%) saturate(6313%) hue-rotate(140deg) brightness(99%) contrast(107%);
 }
 
@@ -250,6 +245,15 @@ footer a, footer a:hover, footer a:focus, footer a:active {
     justify-content: space-between;
   }
 
+  .delete-selected-btn {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+
+  .bin-icon {
+    width: 1.2rem;
+  }
+
   .todo-list {
     grid-template-columns: 1fr;
     margin-top: 70px;
@@ -301,7 +305,6 @@ footer a, footer a:hover, footer a:focus, footer a:active {
 
   .todo-list {
     grid-template-columns: repeat(2, 1fr);
-    
   }
 }
 
@@ -376,6 +379,8 @@ footer a, footer a:hover, footer a:focus, footer a:active {
     font-size: 1.1rem;
   }
 
+  
+
 }
 
 @media only screen and (min-width: 1400px) {
@@ -388,6 +393,15 @@ footer a, footer a:hover, footer a:focus, footer a:active {
     width: 30rem;
     height: 6rem;
     font-size: 1.7rem;
+  }
+
+  .delete-selected-btn {
+    width: 5rem;
+    height: 5rem;
+  }
+
+  .bin-icon {
+    width: 2rem;
   }
 
   .todo-list {

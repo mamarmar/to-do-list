@@ -6,7 +6,7 @@
 
   <h3> <a target="_blank" href="https://willdo-app.netlify.app/">Try me!</a></h3>
 
-  [![Netlify Status](https://api.netlify.com/api/v1/badges/08045f0f-324b-4b71-9612-42a3707454e8/deploy-status)](https://app.netlify.com/sites/tenzi-react/deploys)
+  [![Netlify Status](https://api.netlify.com/api/v1/badges/08045f0f-324b-4b71-9612-42a3707454e8/deploy-status)](https://app.netlify.com/sites/willdo-app/deploys)
 
 </div>
   
